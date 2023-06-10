@@ -10,7 +10,11 @@ const Formulario = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('hiii')
+    if([ mascota, propietario, email, alta, sintomas ].includes('')){
+      console.log('hay campos vacios')
+    }else{
+      console.log('campos completados')
+    }
   }
 
   return (
