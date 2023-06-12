@@ -14,9 +14,10 @@ const Formulario = () => {
     e.preventDefault();
     if([ mascota, propietario, email, alta, sintomas ].includes('')){
       setError(true)
-    }else{
-      console.log('campos completados')
+      return
     }
+
+    setError(false)
   }
 
   return (
@@ -29,7 +30,11 @@ const Formulario = () => {
         <span className="text-indigo-600 font-bold">Administrar</span>
       </p>
       <form onSubmit={handleSubmit} className="bg-white shadow-md rounded-lg py-10 px-5 mb-10">
-        { error ? 'Error' : 'No hay error' }
+        { error && (
+          <div className="bg-red-800 text-white text-center p-3 uppercase font-bold mb-3 rounded-md">
+            <p>Todos los campos son obligatorios</p>  
+          </div>
+        )}
         <div className="mb-5">
           <label htmlFor="mascota" className="block text-gray-700 uppercase font-bold">
             Nombre Mascota
