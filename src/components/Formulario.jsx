@@ -6,7 +6,7 @@ const Formulario = ({ pacientes, setPacientes }) => {
 
 
   const [ mascota, setMascota ] = useState('')
-  const [ propietario, setPropietario ] = useState('')
+  const [ dueno, setDueno ] = useState('')
   const [ email, setEmail ] = useState('')
   const [ alta, setAlta ] = useState('')
   const [ sintomas, setSintomas ] = useState('')
@@ -24,7 +24,7 @@ const Formulario = ({ pacientes, setPacientes }) => {
 
     const objPaciente = {
       mascota,
-      propietario,
+      dueno,
       email,
       alta,
       sintomas
@@ -34,7 +34,7 @@ const Formulario = ({ pacientes, setPacientes }) => {
 
     //Reiniciar form
     setMascota('')
-    setPropietario('')
+    setDueno('')
     setEmail('')
     setAlta('')
     setSintomas('')
@@ -78,8 +78,8 @@ const Formulario = ({ pacientes, setPacientes }) => {
             type="text"
             placeholder="Nombre del propietario"
             className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"
-            value={propietario}
-            onChange={ (e) => setPropietario(e.target.value) }
+            value={dueno}
+            onChange={ (e) => setDueno(e.target.value) }
           />
         </div>
         <div className="mb-5">

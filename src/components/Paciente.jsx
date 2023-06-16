@@ -3,7 +3,7 @@
 
       const {
          mascota,
-         propietario,
+         dueno,
          email,
          alta,
          sintomas
@@ -15,8 +15,8 @@
                <p className="font-bold mb-3 text-gray-700 uppercase">Nombre: {''}
                   <span className="font-normal normal-case">{mascota}</span>
                </p>
-               <p className="font-bold mb-3 text-gray-700 uppercase">Propietario: {''}
-                  <span className="font-normal normal-case">{propietario}</span>
+               <p className="font-bold mb-3 text-gray-700 uppercase">Dueño: {''}
+                  <span className="font-normal normal-case">{dueno}</span>
                </p>
                <p className="font-bold mb-3 text-gray-700 uppercase">Email: {''}
                   <span className="font-normal normal-case">{email}</span>
