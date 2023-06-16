@@ -1,8 +1,8 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Error from "./error"
 
 
-const Formulario = ({ pacientes, setPacientes }) => {
+const Formulario = ({ pacientes, setPacientes, paciente }) => {
 
 
   const [ mascota, setMascota ] = useState('')
@@ -13,9 +13,21 @@ const Formulario = ({ pacientes, setPacientes }) => {
 
   const [ error, setError ] = useState(false)
 
+  useEffect(() => {
+    if( Object.keys(paciente).length > 0 ){
+      setMascota(paciente.mascota)
+      setDueno(paciente.dueno)
+      setEmail(paciente.email)
+      setAlta(paciente.alta)
+      setSintomas(paciente.sintomas)
+    }
+  }, [paciente])
+  
+  
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    if([ mascota, propietario, email, alta, sintomas ].includes('')){
+    if([ mascota, dueno, email, alta, sintomas ].includes('')){
       setError(true)
       return
     }
@@ -70,13 +82,13 @@ const Formulario = ({ pacientes, setPacientes }) => {
           />
         </div>
         <div className="mb-5">
-          <label htmlFor="propietario" className="block text-gray-700 uppercase font-bold">
-            Nombre del Propietario
+          <label htmlFor="dueno" className="block text-gray-700 uppercase font-bold">
+            Nombre del Dueño
           </label>
           <input
-            id="propietario"
+            id="dueno"
             type="text"
-            placeholder="Nombre del propietario"
+            placeholder="Nombre del dueño"
             className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"
             value={dueno}
             onChange={ (e) => setDueno(e.target.value) }
@@ -89,7 +101,7 @@ const Formulario = ({ pacientes, setPacientes }) => {
           <input
             id="email"
             type="email"
-            placeholder="Email de contacto del propietario"
+            placeholder="Email de contacto del dueño"
             className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"
             value={email}
             onChange={ (e) => setEmail(e.target.value) }

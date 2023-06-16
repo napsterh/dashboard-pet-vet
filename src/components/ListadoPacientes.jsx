@@ -1,7 +1,11 @@
+import { useEffect } from "react"
 import Paciente from "./Paciente"
 
 
-const ListadoPacientes = ({pacientes, setPaciente}) => {
+const ListadoPacientes = ({pacientes, setPaciente, paciente}) => {
+
+   
+
    return (
       <div className="md:w-1/2 lg:w-3/5 h-screen md:overflow-y-scroll">
 
