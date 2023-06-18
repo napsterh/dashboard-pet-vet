@@ -2,7 +2,7 @@ import { useState, useEffect } from "react"
 import Error from "./error"
 
 
-const Formulario = ({ pacientes, setPacientes, paciente }) => {
+const Formulario = ({ pacientes, setPacientes, paciente, setPaciente }) => {
 
 
   const [ mascota, setMascota ] = useState('')
@@ -46,11 +46,21 @@ const Formulario = ({ pacientes, setPacientes, paciente }) => {
       dueno,
       email,
       alta,
-      sintomas,
-      id: generarId()
+      sintomas
     }
 
-    setPacientes([...pacientes, objPaciente])
+  if(paciente.id){
+    //Editando registro
+    objPaciente.id = paciente.id;
+
+    const pacientesActualizados = pacientes.map( pacienteState => pacienteState.id === paciente.id ? objPaciente : pacienteState )
+    setPacientes(pacientesActualizados)
+    setPaciente({})
+  }else {
+    //nuevo registro
+    objPaciente.id = generarId(); 
+    setPacientes([...pacientes, objPaciente]);
+  }
 
     //Reiniciar form
     setMascota('')
@@ -59,12 +69,6 @@ const Formulario = ({ pacientes, setPacientes, paciente }) => {
     setAlta('')
     setSintomas('')
 
-  }
-
-  if(paciente.id){
-    console.log('editando')
-  }else {
-    console.log('creando')
   }
 
   return (
