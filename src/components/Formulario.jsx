@@ -53,6 +53,12 @@ const Formulario = ({ pacientes, setPacientes, paciente }) => {
 
   }
 
+  if(paciente.id){
+    console.log('editando')
+  }else {
+    console.log('creando')
+  }
+
   return (
     <div className="md:w-1/2 lg:w-2/5">
       <h2 className="font-black text-3xl text-center">
