@@ -4,7 +4,7 @@ import Paciente from "./Paciente"
 
 const ListadoPacientes = ({pacientes, setPaciente, paciente}) => {
 
-   
+
 
    return (
       <div className="md:w-1/2 lg:w-3/5 h-screen md:overflow-y-scroll">
@@ -16,10 +16,10 @@ const ListadoPacientes = ({pacientes, setPaciente, paciente}) => {
                   Administra tus {''}
                   <span className="text-indigo-600 font-bold">Pacientes y Citas</span>
                </p>
-               {pacientes.map( (paciente, index) => (
+               {pacientes.map( paciente => (
                   <Paciente
                      paciente={paciente}
-                     key={index}
+                     key={paciente.id}
                      setPaciente={setPaciente}
                   />
                ))}

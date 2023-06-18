@@ -13,6 +13,13 @@ const Formulario = ({ pacientes, setPacientes, paciente }) => {
 
   const [ error, setError ] = useState(false)
 
+  const generarId = () => {
+    const random = Math.random().toString(36).substr(2);
+    const fecha = Date.now().toString(36)
+
+    return random + fecha;
+  }
+
   useEffect(() => {
     if( Object.keys(paciente).length > 0 ){
       setMascota(paciente.mascota)
@@ -39,7 +46,8 @@ const Formulario = ({ pacientes, setPacientes, paciente }) => {
       dueno,
       email,
       alta,
-      sintomas
+      sintomas,
+      id: generarId()
     }
 
     setPacientes([...pacientes, objPaciente])
