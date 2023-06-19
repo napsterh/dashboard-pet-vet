@@ -2,7 +2,7 @@ import { useEffect } from "react"
 import Paciente from "./Paciente"
 
 
-const ListadoPacientes = ({pacientes, setPaciente, paciente}) => {
+const ListadoPacientes = ({pacientes, setPaciente, paciente, eliminarPaciente}) => {
 
 
 
@@ -21,6 +21,7 @@ const ListadoPacientes = ({pacientes, setPaciente, paciente}) => {
                      paciente={paciente}
                      key={paciente.id}
                      setPaciente={setPaciente}
+                     eliminarPaciente={eliminarPaciente}
                   />
                ))}
             </>

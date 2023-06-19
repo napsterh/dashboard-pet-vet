@@ -1,12 +1,13 @@
 
-   const Paciente = ({paciente, setPaciente}) => {
+   const Paciente = ({paciente, setPaciente, eliminarPaciente }) => {
 
       const {
          mascota,
          dueno,
          email,
          alta,
-         sintomas
+         sintomas,
+         id
       } = paciente
 
    return (
@@ -36,6 +37,7 @@
                   <button
                      type="button"
                      className="py-2 px-2 bg-red-600 hover:bg-red-700 text-white font-bold uppercase rounded-lg"
+                     onClick={ () => eliminarPaciente(id) }
                   >Eliminar</button>
                </div>
             </>
