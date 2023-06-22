@@ -39,7 +39,7 @@
                <div className="flex justify-between mt-5">
                   <button
                      type="button"
-                     className="py-2 px-2 bg-indigo-600 hover:bg-indigo-700 text-white font-bold uppercase rounded-lg"
+                     className="py-2 px-2 bg-green-600 hover:bg-green-700 text-white font-bold uppercase rounded-lg"
                      onClick={ () => setPaciente(paciente) }
                   >Editar</button>
                   <button
